@@ -84,7 +84,7 @@ def create_folders_for_training(fnet_dataset_path, Training_source, Training_tar
           shutil.copytree(Pretrained_model_folder,'/content/gdrive/My Drive/pytorch_fnet/saved_models/' + Pretrained_model_name)
 
 
-def split_validation_training(fnet_data, percent_for_validation, fnet_dataset_path, source_name, target_name, continue_training, new_datasource=True, replace_existing_dataset=True, Pretrained_model_name=None):
+def split_validation_training(fnet_data, percent_for_validation, fnet_dataset_path, source_name, target_name, continue_training, source, new_datasource=True, replace_existing_dataset=True, Pretrained_model_name=None):
   #split validation data randomly for new training or use the same ones for previously trained datasets based on the csv file provided
   if continue_training==False or (continue_training==True and new_datasource==True):
       val_files = random.sample(source,round(len(source)*(percent_for_validation/100)))
